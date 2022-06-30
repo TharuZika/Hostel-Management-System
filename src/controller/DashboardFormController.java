@@ -22,36 +22,21 @@ import java.io.IOException;
 import java.net.URL;
 
 public class DashboardFormController {
-    public Label lblDescription;
-    public Label lblMenu;
-    public ImageView imgKeyMoney;
-    public ImageView imgRooms;
-    public ImageView imgStudent;
     public AnchorPane root;
-    public JFXButton btnSettings;
-    public JFXButton btnStudent;
-    public JFXButton btnRoom;
-    public JFXButton btnKeyMoney;
-    public JFXButton btnReserve;
+    public FontAwesomeIconView btnSettings;
+    public FontAwesomeIconView btnStudent;
+    public FontAwesomeIconView btnRoom;
+    public FontAwesomeIconView btnKeyMoney;
+    public FontAwesomeIconView btnReserve;
+
+    public void initialize() throws IOException {
+        this.root.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/ReserveForm.fxml")));
+    }
 
     public void playMouseEnterAnimation(MouseEvent event) {
-        if (event.getSource() instanceof JFXButton) {
-            JFXButton btn = (JFXButton) event.getSource();
+        if (event.getSource() instanceof FontAwesomeIconView) {
+            FontAwesomeIconView btn = (FontAwesomeIconView) event.getSource();
 
-//            switch (btn.getId()) {
-//                case "btnReserve":
-//                    lblMenu.setText("Reserve Room");
-//                    lblDescription.setText("Click to add, update, delete or view Reservations");
-//                    break;
-//                case "btn":
-//                    lblMenu.setText("View Rooms");
-//                    lblDescription.setText("Click to add, update, delete or view Rooms");
-//                    break;
-//                case "imgKeyMoney":
-//                    lblMenu.setText("Payment Info");
-//                    lblDescription.setText("Click to view Payment Info");
-//                    break;
-//            }
 
             ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), btn);
             scaleT.setToX(1.2);
@@ -59,7 +44,7 @@ public class DashboardFormController {
             scaleT.play();
 
             DropShadow glow = new DropShadow();
-            glow.setColor(Color.CORNFLOWERBLUE);
+            glow.setColor(Color.LAWNGREEN);
             glow.setWidth(20);
             glow.setHeight(20);
             glow.setRadius(20);
@@ -68,29 +53,24 @@ public class DashboardFormController {
     }
 
     public void playMouseExitAnimation(MouseEvent event) {
-        if (event.getSource() instanceof ImageView) {
-            ImageView icon = (ImageView) event.getSource();
-            ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
+        if (event.getSource() instanceof FontAwesomeIconView) {
+            FontAwesomeIconView btn = (FontAwesomeIconView) event.getSource();
+            ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), btn);
             scaleT.setToX(1);
             scaleT.setToY(1);
             scaleT.play();
 
-            icon.setEffect(null);
-            lblMenu.setText("Welcome");
-            lblDescription.setText("Please select one of above main operations to proceed");
+            btn.setEffect(null);
         }
     }
 
     public void navigate(MouseEvent event) throws IOException {
-        if (event.getSource() instanceof JFXButton) {
-            JFXButton btn = (JFXButton) event.getSource();
+        if (event.getSource() instanceof FontAwesomeIconView) {
+            FontAwesomeIconView btn = (FontAwesomeIconView) event.getSource();
 
             Parent root = null;
 
             switch (btn.getId()) {
-                case "btnReserve":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/ReserveForm.fxml"));
-                    break;
                 case "btnStudent":
                     root = FXMLLoader.load(this.getClass().getResource("/view/StudentForm.fxml"));
                     break;
@@ -101,45 +81,18 @@ public class DashboardFormController {
                     root = FXMLLoader.load(this.getClass().getResource("/view/KeyMoneyForm.fxml"));
                     break;
                 case "btnSettings":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/ChangePasswordForm.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/view/ChangeLoginForm.fxml"));
+                    break;
+                case "btnReserve":
+                    root = FXMLLoader.load(this.getClass().getResource("/view/ReserveForm.fxml"));
                     break;
             }
 
             if (root != null) {
-                Scene subScene = new Scene(root);
-                Stage primaryStage = (Stage) this.root.getScene().getWindow();
-                primaryStage.setScene(subScene);
-                primaryStage.centerOnScreen();
+                this.root.getChildren().clear();
+                this.root.getChildren().add(root);
 
-                TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
-                tt.setFromX(-subScene.getWidth());
-                tt.setToX(0);
-                tt.play();
             }
         }
-    }
-
-    public void navigateToHome(MouseEvent mouseEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/LoggingForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
-
-    public void closeWindowOnAction(ActionEvent actionEvent) {
-        javafx.application.Platform.exit();
-    }
-
-    public void openChangeLoginOnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/ChangeLoginForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
     }
 }

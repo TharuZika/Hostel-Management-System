@@ -1,49 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXToggleButton?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChangeLoginFormController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChangeLoginFormController">
    <children>
-      <Pane layoutX="80.0" layoutY="72.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="900.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <effect>
-            <DropShadow color="#00000052" height="25.24" radius="5.81" width="0.0" />
-         </effect>
-         <children>
-            <Circle fill="RED" layoutX="865.0" layoutY="27.0" opacity="0.65" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-            <FontAwesomeIconView fill="#000000c3" fontSmoothingType="LCD" glyphName="CLOSE" layoutX="859.0" layoutY="32.0" size="15" />
-            <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="852.0" layoutY="14.0" onAction="#closeWindowOnAction" prefHeight="27.0" prefWidth="27.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" text="Button" textFill="TRANSPARENT" textOverrun="CLIP" />
-            <Pane layoutX="800.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="24.0" prefWidth="49.0" style="-fx-background-radius: 360; -fx-background-color: #87ff83;">
-               <children>
-                  <FontAwesomeIconView fill="#000000c2" glyphName="SIGN_OUT" layoutX="13.0" layoutY="18.0" size="20" />
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Pane>
-            <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="800.0" layoutY="13.0" onMouseClicked="#navigateToLogin" prefHeight="24.0" prefWidth="49.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" textFill="TRANSPARENT" textOverrun="CLIP" />
-            <Pane layoutX="20.0" layoutY="13.0" prefHeight="24.0" prefWidth="49.0" style="-fx-background-radius: 360; -fx-background-color: #f6ff13;">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <children>
-                  <MaterialDesignIconView glyphName="KEYBOARD_BACKSPACE" layoutX="12.0" layoutY="21.0" size="25" />
-               </children>
-            </Pane>
-            <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="20.0" layoutY="13.0" onMouseClicked="#navigateToHome" prefHeight="24.0" prefWidth="49.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" textFill="TRANSPARENT" textOverrun="CLIP" />
-         </children>
-      </Pane>
-      <Label layoutX="86.0" prefHeight="52.0" prefWidth="543.0" text="Manage Login Information" textOverrun="CLIP">
+      <Label layoutX="14.0" prefHeight="52.0" prefWidth="543.0" text="Manage Login Information" textOverrun="CLIP">
          <font>
             <Font name="Arial Bold" size="23.0" />
          </font>
@@ -51,7 +16,7 @@
             <ColorAdjust brightness="-1.0" contrast="-1.0" />
          </effect>
       </Label>
-      <JFXToggleButton fx:id="toggleBtn" contentDisplay="CENTER" layoutX="23.0" layoutY="66.0" onAction="#changePaneOnAction" text="Change Username                    Change Password" textAlignment="RIGHT" unToggleColor="#009688" unToggleLineColor="#77c2bb" />
-      <Pane fx:id="contentDisplayPane" layoutX="25.0" layoutY="124.0" prefHeight="430.0" prefWidth="850.0" />
+      <Pane fx:id="contentDisplayPane1" layoutY="100.0" prefHeight="500.0" prefWidth="521.0" />
+      <Pane fx:id="contentDisplayPane2" layoutX="521.0" layoutY="100.0" prefHeight="500.0" prefWidth="550.0" />
    </children>
 </AnchorPane>

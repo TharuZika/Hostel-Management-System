@@ -4,64 +4,32 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import java.lang.String?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="570.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentFormController">
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentFormController">
    <children>
-      <Pane layoutX="60.0" layoutY="52.0" prefHeight="51.0" prefWidth="900.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="519.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <effect>
-            <DropShadow color="#00000052" height="25.24" radius="5.81" width="0.0" />
-         </effect>
-      </Pane>
-      <Circle fill="RED" layoutX="865.0" layoutY="27.0" opacity="0.65" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <FontAwesomeIconView fill="#000000c3" fontSmoothingType="LCD" glyphName="CLOSE" layoutX="859.0" layoutY="32.0" size="15" />
-      <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="852.0" layoutY="14.0" onAction="#closeWindowOnAction" prefHeight="27.0" prefWidth="27.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" text="Button" textFill="TRANSPARENT" textOverrun="CLIP" />
-      <Pane layoutX="800.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="24.0" prefWidth="49.0" style="-fx-background-radius: 360; -fx-background-color: #87ff83;">
-         <children>
-            <FontAwesomeIconView fill="#000000c2" glyphName="SIGN_OUT" layoutX="13.0" layoutY="18.0" size="20" />
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Pane>
-      <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="800.0" layoutY="13.0" onMouseClicked="#navigateToLogin" prefHeight="24.0" prefWidth="49.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" textFill="TRANSPARENT" textOverrun="CLIP" />
-      <Pane layoutX="20.0" layoutY="13.0" prefHeight="24.0" prefWidth="49.0" style="-fx-background-radius: 360; -fx-background-color: #f6ff13;">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <children>
-            <MaterialDesignIconView glyphName="KEYBOARD_BACKSPACE" layoutX="12.0" layoutY="21.0" size="25" />
-         </children>
-      </Pane>
-      <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="20.0" layoutY="13.0" onMouseClicked="#navigateToHome" prefHeight="24.0" prefWidth="49.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" textFill="TRANSPARENT" textOverrun="CLIP" />
-      <JFXTextField fx:id="txtStudentId" labelFloat="true" layoutX="53.0" layoutY="76.0" prefHeight="29.0" prefWidth="707.0" promptText="Student ID :">
+      <JFXTextField fx:id="txtStudentId" labelFloat="true" layoutX="53.0" layoutY="76.0" prefHeight="31.0" prefWidth="337.0" promptText="Student ID :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="53.0" layoutY="128.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Student Name :">
+      <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="407.0" layoutY="76.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="671.0" promptText="Student Name :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtStudentAddress" labelFloat="true" layoutX="423.0" layoutY="128.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Student Address :">
+      <JFXTextField fx:id="txtStudentAddress" labelFloat="true" layoutX="53.0" layoutY="130.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="1024.0" promptText="Student Address :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="86.0" prefHeight="52.0" prefWidth="543.0" text="Manage Students" textOverrun="CLIP">
+      <Label layoutX="14.0" prefHeight="52.0" prefWidth="543.0" text="Manage Students" textOverrun="CLIP">
          <font>
             <Font name="Arial Bold" size="23.0" />
          </font>
@@ -69,7 +37,7 @@
             <ColorAdjust brightness="-1.0" contrast="-1.0" />
          </effect>
       </Label>
-      <TableView fx:id="tblStudent" layoutX="23.0" layoutY="279.0" prefHeight="274.0" prefWidth="853.0" stylesheets="@../styles/place_order.css">
+      <TableView fx:id="tblStudent" layoutX="9.0" layoutY="279.0" prefHeight="309.0" prefWidth="1077.0" stylesheets="@../styles/place_order.css">
          <columns>
             <TableColumn fx:id="colStuId" prefWidth="101.0" text="Student ID " />
             <TableColumn fx:id="colStuName" prefWidth="171.0" text="Student Name" />
@@ -83,27 +51,27 @@
             <String fx:value="table-row-cell" />
          </styleClass>
       </TableView>
-      <JFXButton id="btnSave" fx:id="btnSave" layoutX="254.0" layoutY="229.0" onAction="#btnSave_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="#b5b4b4" style="-fx-cursor: hand; -fx-background-radius: 360; -fx-background-color: yellow;" text="Save">
+      <JFXButton id="btnSave" fx:id="btnSave" layoutX="731.0" layoutY="229.0" onAction="#btnSave_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="#b5b4b4" style="-fx-cursor: hand; -fx-background-radius: 10; -fx-background-color: #27a700;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton id="btnUpdate" fx:id="btnUpdate" layoutX="381.0" layoutY="229.0" onAction="#btnUpdate_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-cursor: hand; -fx-background-radius: 360; -fx-background-color: #87ff83;" text="Update">
+      <JFXButton id="btnUpdate" fx:id="btnUpdate" layoutX="858.0" layoutY="229.0" onAction="#btnUpdate_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-cursor: hand; -fx-background-radius: 7; -fx-background-color: #27a700;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton id="btnDelete" fx:id="btnDelete" layoutX="509.0" layoutY="229.0" onAction="#btnDelete_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-cursor: hand; -fx-background-radius: 360; -fx-background-color: #ff0000;" text="Delete" textFill="#000000cb">
+      <JFXButton id="btnDelete" fx:id="btnDelete" layoutX="986.0" layoutY="229.0" onAction="#btnDelete_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-cursor: hand; -fx-background-radius: 7; -fx-background-color: #ae0000;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXComboBox fx:id="cmbSex" labelFloat="true" layoutX="534.0" layoutY="175.0" prefHeight="38.0" prefWidth="226.0" promptText="Gender :" styleClass="combo" stylesheets="@../styles/place_order.css" />
-      <JFXTextField fx:id="txtContactNo" labelFloat="true" layoutX="53.0" layoutY="182.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="226.0" promptText="Contact Number :">
+      <JFXComboBox fx:id="cmbSex" labelFloat="true" layoutX="630.0" layoutY="176.0" prefHeight="38.0" prefWidth="226.0" promptText="Gender :" styleClass="combo" stylesheets="@../styles/place_order.css" />
+      <JFXTextField fx:id="txtContactNo" labelFloat="true" layoutX="53.0" layoutY="182.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="322.0" promptText="Contact Number :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXDatePicker fx:id="txtDob" layoutX="294.0" layoutY="175.0" prefHeight="38.0" prefWidth="226.0" promptText="Date of Birth :" stylesheets="@../styles/place_order.css" />
+      <JFXDatePicker fx:id="txtDob" layoutX="390.0" layoutY="176.0" prefHeight="38.0" prefWidth="226.0" promptText="Date of Birth :" stylesheets="@../styles/place_order.css" />
    </children>
 </AnchorPane>

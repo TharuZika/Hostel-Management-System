@@ -265,19 +265,7 @@ public class ReserveFormController {
         Platform.runLater(() -> primaryStage.sizeToScene());
     }
 
-    public void closeWindowOnAction(ActionEvent actionEvent) {
-        javafx.application.Platform.exit();
-    }
 
-    public void btnAddNewStudent_OnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/StudentForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
 
     LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
     Pattern price = Pattern.compile("^[0-9]{1,30}$");
