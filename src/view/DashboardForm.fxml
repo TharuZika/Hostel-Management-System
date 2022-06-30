@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardFormController">
+   <children>
+      <Label fx:id="lblMenu" alignment="CENTER" layoutX="62.0" layoutY="208.0" prefHeight="51.0" prefWidth="900.0" text="Welcome" textAlignment="CENTER" textFill="#0a39f7">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" alignment="CENTER" layoutX="62.0" layoutY="251.0" prefHeight="17.0" prefWidth="900.0" text="Please select one of above main operations to proceed" />
+      <Circle fill="RED" layoutX="1001.0" layoutY="27.0" opacity="0.56" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <FontAwesomeIconView fill="#000000c3" fontSmoothingType="LCD" glyphName="CLOSE" layoutX="1067.0" layoutY="32.0" size="15" />
+      <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="1054.0" layoutY="50.0" onAction="#closeWindowOnAction" prefHeight="27.0" prefWidth="27.0" ripplerFill="WHITE" style="-fx-background-radius: 360; -fx-background-color: red;" text="Button" textFill="TRANSPARENT" textOverrun="CLIP" />
+      <Pane layoutX="809.0" layoutY="27.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="24.0" prefWidth="49.0" style="-fx-background-radius: 360; -fx-background-color: #87ff83;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <FontAwesomeIconView fill="#000000c2" glyphName="SIGN_OUT" layoutX="-121.0" layoutY="24.0" size="20" />
+      <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="900.0" layoutY="64.0" onMouseClicked="#navigateToHome" prefHeight="24.0" prefWidth="49.0" ripplerFill="WHITE" style="-fx-background-radius: 360; -fx-background-color: green;" textFill="TRANSPARENT" textOverrun="CLIP" />
+      <ImageView fx:id="imgStudent" blendMode="MULTIPLY" fitHeight="159.0" fitWidth="127.0" layoutX="72.0" layoutY="61.0" nodeOrientation="INHERIT" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/friends.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgRooms" blendMode="MULTIPLY" fitHeight="159.0" fitWidth="127.0" layoutX="432.0" layoutY="64.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/living-room.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgKeyMoney" blendMode="MULTIPLY" fitHeight="159.0" fitWidth="127.0" layoutX="637.0" layoutY="64.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/checklist.png" />
+         </image>
+      </ImageView>
+      <JFXButton ellipsisString="" layoutX="840.0" layoutY="102.0" onAction="#openChangeLoginOnAction" onMouseClicked="#navigateToHome" prefHeight="70.0" prefWidth="70.0" ripplerFill="#d0d0d0" style="-fx-background-radius: 360; -fx-background-color: #f6ff13;" text="Change Login Details" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutY="219.0" prefHeight="572.0" prefWidth="1100.0" />
+      <FontAwesomeIconView fill="#000000c2" glyphName="SIGN_OUT" layoutX="937.0" layoutY="36.0" size="20" />
+      <JFXButton layoutX="256.0" layoutY="89.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text=" ">
+         <graphic>
+            <FontAwesomeIconView glyphName="USERS" size="43" />
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="461.0" layoutY="93.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text="room" />
+      <JFXButton layoutX="659.0" layoutY="93.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text="key payment" />
+      <JFXButton fx:id="imgStudent" layoutX="100.0" layoutY="93.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text=" ">
+         <graphic>
+            <FontAwesomeIconView glyphName="CHECK_CIRCLE" size="54" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

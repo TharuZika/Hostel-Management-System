@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RoomFormController">
+   <children>
+      <Pane layoutX="70.0" layoutY="62.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="900.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <DropShadow color="#00000052" height="25.24" radius="5.81" width="0.0" />
+         </effect>
+         <children>
+            <Circle fill="RED" layoutX="865.0" layoutY="27.0" opacity="0.65" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <FontAwesomeIconView fill="#000000c3" fontSmoothingType="LCD" glyphName="CLOSE" layoutX="859.0" layoutY="32.0" size="15" />
+            <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="852.0" layoutY="14.0" onAction="#closeWindowOnAction" prefHeight="27.0" prefWidth="27.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" text="Button" textFill="TRANSPARENT" textOverrun="CLIP" />
+            <Pane layoutX="800.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="24.0" prefWidth="49.0" style="-fx-background-radius: 360; -fx-background-color: #87ff83;">
+               <children>
+                  <FontAwesomeIconView fill="#000000c2" glyphName="SIGN_OUT" layoutX="13.0" layoutY="18.0" size="20" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+            <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="800.0" layoutY="13.0" onMouseClicked="#navigateToLogin" prefHeight="24.0" prefWidth="49.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" textFill="TRANSPARENT" textOverrun="CLIP" />
+            <Pane layoutX="20.0" layoutY="13.0" prefHeight="24.0" prefWidth="49.0" style="-fx-background-radius: 360; -fx-background-color: #f6ff13;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <MaterialDesignIconView glyphName="KEYBOARD_BACKSPACE" layoutX="12.0" layoutY="21.0" size="25" />
+               </children>
+            </Pane>
+            <JFXButton contentDisplay="CENTER" ellipsisString="" layoutX="20.0" layoutY="13.0" onMouseClicked="#navigateToHome" prefHeight="24.0" prefWidth="49.0" ripplerFill="WHITE" style="-fx-background-radius: 360;" textFill="TRANSPARENT" textOverrun="CLIP" />
+         </children>
+      </Pane>
+      <Label layoutX="86.0" prefHeight="52.0" prefWidth="543.0" text="Manage Rooms" textOverrun="CLIP">
+         <font>
+            <Font name="Arial Bold" size="23.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-1.0" contrast="-1.0" />
+         </effect>
+      </Label>
+      <TableView fx:id="tblRoom" layoutX="23.0" layoutY="279.0" prefHeight="274.0" prefWidth="853.0" stylesheets="@../styles/place_order.css">
+         <columns>
+            <TableColumn fx:id="colRoomId" prefWidth="196.3333282470703" text="Room ID" />
+            <TableColumn fx:id="colRoomType" prefWidth="186.6666717529297" text="Room Type " />
+            <TableColumn fx:id="colMonthlyRent" prefWidth="272.66668701171875" text="Monthly Rental (LKR)" />
+            <TableColumn fx:id="colQty" prefWidth="194.33331298828125" text="Qty " />
+         </columns>
+         <styleClass>
+            <String fx:value="table-cell" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <JFXTextField fx:id="txtRoomId" labelFloat="true" layoutX="53.0" layoutY="76.0" onKeyReleased="#textFields_Key_Released" onMouseClicked="#setTextOnMouseClick" prefHeight="29.0" prefWidth="707.0" promptText="Room ID :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton id="btnSave" fx:id="btnSave" layoutX="254.0" layoutY="229.0" onAction="#btnSave_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="#b5b4b4" style="-fx-cursor: hand; -fx-background-radius: 360; -fx-background-color: yellow;" text="Save">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton id="btnUpdate" fx:id="btnUpdate" layoutX="381.0" layoutY="229.0" onAction="#btnUpdate_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-cursor: hand; -fx-background-radius: 360; -fx-background-color: #87ff83;" text="Update">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton id="btnDelete" fx:id="btnDelete" layoutX="509.0" layoutY="229.0" onAction="#btnDelete_OnAction" prefHeight="28.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-cursor: hand; -fx-background-radius: 360; -fx-background-color: #ff0000;" text="Delete" textFill="#000000cb">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="53.0" layoutY="124.0" prefHeight="38.0" prefWidth="336.0" promptText="Room Type :" styleClass="combo" stylesheets="@../styles/place_order.css" />
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="423.0" layoutY="130.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Qty :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtMonthlyRent" labelFloat="true" layoutX="53.0" layoutY="183.0" onKeyReleased="#textFields_Key_Released" prefHeight="29.0" prefWidth="707.0" promptText="Monthly Rental (LKR) :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>
