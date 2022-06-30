@@ -44,21 +44,31 @@
             <Image url="@../assert/checklist.png" />
          </image>
       </ImageView>
-      <JFXButton ellipsisString="" layoutX="840.0" layoutY="102.0" onAction="#openChangeLoginOnAction" onMouseClicked="#navigateToHome" prefHeight="70.0" prefWidth="70.0" ripplerFill="#d0d0d0" style="-fx-background-radius: 360; -fx-background-color: #f6ff13;" text="Change Login Details" textOverrun="CLIP">
+      <AnchorPane layoutY="219.0" prefHeight="572.0" prefWidth="1100.0" />
+      <FontAwesomeIconView fill="#000000c2" glyphName="SIGN_OUT" layoutX="937.0" layoutY="36.0" size="20" />
+      <JFXButton fx:id="btnSettings" ellipsisString="" layoutX="840.0" layoutY="102.0" onAction="#openChangeLoginOnAction" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="70.0" prefWidth="70.0" ripplerFill="#d0d0d0" style="-fx-background-radius: 360; -fx-background-color: #f6ff13;" text=" " textOverrun="CLIP">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="GEAR" size="50" />
+         </graphic>
       </JFXButton>
-      <AnchorPane layoutY="219.0" prefHeight="572.0" prefWidth="1100.0" />
-      <FontAwesomeIconView fill="#000000c2" glyphName="SIGN_OUT" layoutX="937.0" layoutY="36.0" size="20" />
-      <JFXButton layoutX="256.0" layoutY="89.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text=" ">
+      <JFXButton fx:id="btnStudent" layoutX="256.0" layoutY="89.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text=" ">
          <graphic>
             <FontAwesomeIconView glyphName="USERS" size="43" />
          </graphic>
       </JFXButton>
-      <JFXButton layoutX="461.0" layoutY="93.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text="room" />
-      <JFXButton layoutX="659.0" layoutY="93.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text="key payment" />
-      <JFXButton fx:id="imgStudent" layoutX="100.0" layoutY="93.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text=" ">
+      <JFXButton fx:id="btnRoom" layoutX="461.0" layoutY="93.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text=" ">
+         <graphic>
+            <FontAwesomeIconView glyphName="HOME" size="54" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnKeyMoney" layoutX="659.0" layoutY="93.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text=" ">
+         <graphic>
+            <FontAwesomeIconView glyphName="DOLLAR" size="53" />
+         </graphic></JFXButton>
+      <JFXButton fx:id="btnReserve" layoutX="100.0" layoutY="93.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: red; -fx-background-radius: 360;" text=" ">
          <graphic>
             <FontAwesomeIconView glyphName="CHECK_CIRCLE" size="54" />
          </graphic>

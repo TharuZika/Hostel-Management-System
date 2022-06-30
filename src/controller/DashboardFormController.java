@@ -1,5 +1,7 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
@@ -26,27 +28,32 @@ public class DashboardFormController {
     public ImageView imgRooms;
     public ImageView imgStudent;
     public AnchorPane root;
+    public JFXButton btnSettings;
+    public JFXButton btnStudent;
+    public JFXButton btnRoom;
+    public JFXButton btnKeyMoney;
+    public JFXButton btnReserve;
 
     public void playMouseEnterAnimation(MouseEvent event) {
-        if (event.getSource() instanceof ImageView) {
-            ImageView icon = (ImageView) event.getSource();
+        if (event.getSource() instanceof JFXButton) {
+            JFXButton btn = (JFXButton) event.getSource();
 
-            switch (icon.getId()) {
-                case "imgStudent":
-                    lblMenu.setText("Reserve Room");
-                    lblDescription.setText("Click to add, update, delete or view Reservations");
-                    break;
-                case "imgRooms":
-                    lblMenu.setText("View Rooms");
-                    lblDescription.setText("Click to add, update, delete or view Rooms");
-                    break;
-                case "imgKeyMoney":
-                    lblMenu.setText("Payment Info");
-                    lblDescription.setText("Click to view Payment Info");
-                    break;
-            }
+//            switch (btn.getId()) {
+//                case "btnReserve":
+//                    lblMenu.setText("Reserve Room");
+//                    lblDescription.setText("Click to add, update, delete or view Reservations");
+//                    break;
+//                case "btn":
+//                    lblMenu.setText("View Rooms");
+//                    lblDescription.setText("Click to add, update, delete or view Rooms");
+//                    break;
+//                case "imgKeyMoney":
+//                    lblMenu.setText("Payment Info");
+//                    lblDescription.setText("Click to view Payment Info");
+//                    break;
+//            }
 
-            ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
+            ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), btn);
             scaleT.setToX(1.2);
             scaleT.setToY(1.2);
             scaleT.play();
@@ -56,7 +63,7 @@ public class DashboardFormController {
             glow.setWidth(20);
             glow.setHeight(20);
             glow.setRadius(20);
-            icon.setEffect(glow);
+            btn.setEffect(glow);
         }
     }
 
@@ -75,20 +82,26 @@ public class DashboardFormController {
     }
 
     public void navigate(MouseEvent event) throws IOException {
-        if (event.getSource() instanceof ImageView) {
-            ImageView icon = (ImageView) event.getSource();
+        if (event.getSource() instanceof JFXButton) {
+            JFXButton btn = (JFXButton) event.getSource();
 
             Parent root = null;
 
-            switch (icon.getId()) {
-                case "imgStudent":
+            switch (btn.getId()) {
+                case "btnReserve":
                     root = FXMLLoader.load(this.getClass().getResource("/view/ReserveForm.fxml"));
                     break;
-                case "imgRooms":
+                case "btnStudent":
+                    root = FXMLLoader.load(this.getClass().getResource("/view/StudentForm.fxml"));
+                    break;
+                case "btnRoom":
                     root = FXMLLoader.load(this.getClass().getResource("/view/RoomForm.fxml"));
                     break;
-                case "imgKeyMoney":
+                case "btnKeyMoney":
                     root = FXMLLoader.load(this.getClass().getResource("/view/KeyMoneyForm.fxml"));
+                    break;
+                case "btnSettings":
+                    root = FXMLLoader.load(this.getClass().getResource("/view/ChangePasswordForm.fxml"));
                     break;
             }
 
