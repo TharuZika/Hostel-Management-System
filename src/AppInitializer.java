@@ -19,6 +19,7 @@ public class AppInitializer extends Application {
         primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/LoggingForm.fxml"))));
         primaryStage.centerOnScreen();
         primaryStage.setResizable(false);
+        primaryStage.setTitle("Logging Hostel Management System");
         primaryStage.show();
     }
 }

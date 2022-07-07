@@ -24,9 +24,9 @@
       <TableView fx:id="tblRoom" layoutX="12.0" layoutY="251.0" prefHeight="342.0" prefWidth="1077.0" stylesheets="@../styles/place_order.css">
          <columns>
             <TableColumn fx:id="colRoomId" prefWidth="196.3333282470703" text="Room ID" />
-            <TableColumn fx:id="colRoomType" prefWidth="186.6666717529297" text="Room Type " />
-            <TableColumn fx:id="colMonthlyRent" prefWidth="272.66668701171875" text="Monthly Rental (LKR)" />
-            <TableColumn fx:id="colQty" prefWidth="194.33331298828125" text="Qty " />
+            <TableColumn fx:id="colRoomType" prefWidth="393.0" text="Room Type " />
+            <TableColumn fx:id="colMonthlyRent" prefWidth="336.0" text="Monthly Rental (LKR)" />
+            <TableColumn fx:id="colQty" prefWidth="148.0" text="Qty " />
          </columns>
          <styleClass>
             <String fx:value="table-cell" />

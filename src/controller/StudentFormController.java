@@ -64,7 +64,6 @@ public class StudentFormController{
         cmbSex.getItems().addAll(keyMoney);
 
         txtStudentId.setText(generateNewId());
-        txtStudentId.setDisable(true);
 
         colStuId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colStuName.setCellValueFactory(new PropertyValueFactory<>("fullName"));
@@ -152,7 +151,7 @@ public class StudentFormController{
                 btnSave.setDisable(false);
             }
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Failed to delete the course " + id).show();
+            new Alert(Alert.AlertType.ERROR, "Failed to delete " + id).show();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -206,30 +205,6 @@ public class StudentFormController{
         txtStudentId.setText(generateNewId());
     }
 
-    public void navigateToHome(MouseEvent mouseEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/ReserveForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
-
-    public void closeWindowOnAction(ActionEvent actionEvent) {
-        javafx.application.Platform.exit();
-    }
-
-    public void navigateToLogin(MouseEvent mouseEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/LoggingForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
-
     LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
     Pattern namePattern = Pattern.compile("^[A-z ]{3,20}$");
     Pattern phoneNoPattern = Pattern.compile("^[0-9]{10}$");
@@ -249,7 +224,6 @@ public class StudentFormController{
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                //new Alert(Alert.AlertType.INFORMATION, "Added").showAndWait();
             }
         }
     }

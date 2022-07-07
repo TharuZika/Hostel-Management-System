@@ -75,7 +75,6 @@ public class ReserveFormController {
     public void initialize(){
 
         txtReserveId.setText(generateNewId());
-        txtReserveId.setDisable(true);
 
         ObservableList roomsNo = FXCollections.observableArrayList();
         ObservableList students = FXCollections.observableArrayList();
@@ -93,7 +92,6 @@ public class ReserveFormController {
             roomsNo.add(rooms.getRoom_id());
         }
         for (Student student : studentList) {
-//            students.add(student.getId()+" - "+student.getFullName());
             students.add(student.getId());
         }
         transaction.commit();
@@ -245,28 +243,6 @@ public class ReserveFormController {
         return reserveBO.ifReserveExist(id);
     }
 
-    public void navigateToHome(MouseEvent mouseEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/DashboardForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
-
-    public void navigateToLogin(MouseEvent mouseEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/LoggingForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
-
-
-
     LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
     Pattern price = Pattern.compile("^[0-9]{1,30}$");
 
@@ -282,7 +258,6 @@ public class ReserveFormController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                //new Alert(Alert.AlertType.INFORMATION, "Added").showAndWait();
             }
         }
     }

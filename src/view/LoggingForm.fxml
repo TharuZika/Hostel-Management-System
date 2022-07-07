@@ -21,16 +21,20 @@
             <DropShadow height="35.83" radius="18.155" spread="0.1" width="38.79" />
          </effect>
          <children>
-            <JFXTextField fx:id="txtUserName" focusColor="#62eb62" layoutX="61.0" layoutY="133.0" onAction="#goToPassword" prefHeight="42.0" prefWidth="293.0" promptText="  Username" style="-fx-prompt-text-fill: #bdc7c2; -fx-background-color: white;" unFocusColor="#4d4d4d00">
+            <JFXTextField fx:id="txtUserName" focusColor="#62eb62" layoutX="61.0" layoutY="133.0" onAction="#goToPassword" prefHeight="42.0" prefWidth="293.0" promptText="  Username" style="-fx-prompt-text-fill: #bdc7c2; -fx-background-color: white; -fx-background-radius: 7;" unFocusColor="#4d4d4d00">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="txtPassword" focusColor="#62eb62" layoutX="61.0" layoutY="204.0" onAction="#goToLoginPage" prefHeight="42.0" prefWidth="293.0" promptText="  Password" style="-fx-prompt-text-fill: #bdc7c2; -fx-background-color: white;" unFocusColor="#4d4d4d00">
+            <JFXPasswordField fx:id="txtPassword" focusColor="#62eb62" layoutX="61.0" layoutY="204.0" onAction="#goToLoginPage" prefHeight="42.0" prefWidth="293.0" promptText="  Password" style="-fx-prompt-text-fill: #bdc7c2; -fx-background-color: white; -fx-background-radius: 7;" unFocusColor="#4d4d4d00">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </JFXPasswordField>
+            <JFXTextField fx:id="txtPasswordShow" focusColor="#62eb62" layoutX="61.0" layoutY="204.0" onAction="#goToLoginPage" prefHeight="42.0" prefWidth="293.0" promptText="  Password" style="-fx-prompt-text-fill: #bdc7c2; -fx-background-color: white; -fx-background-radius: 7;" unFocusColor="#4d4d4d00" visible="false">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></JFXTextField>
             <JFXButton buttonType="RAISED" layoutX="57.0" layoutY="303.0" onAction="#goToLoginPage" prefHeight="36.0" prefWidth="293.0" style="-fx-background-color: #30cf98; -fx-background-radius: 360;" text="Log in" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
@@ -62,6 +66,8 @@
             </Label>
             <Separator layoutX="82.0" layoutY="367.0" prefHeight="3.0" prefWidth="244.0" />
             <FontAwesomeIconView fx:id="warningIcon" fill="#e10909" glyphName="WARNING" layoutX="82.0" layoutY="287.0" size="20" visible="false" />
+            <FontAwesomeIconView glyphName="EYE" layoutX="319.0" layoutY="235.0" size="30" />
+            <JFXButton layoutX="319.0" layoutY="212.0" onMouseEntered="#passwordShowOnAction" onMouseExited="#passwordHideOnAction" prefHeight="25.0" prefWidth="30.0" style="-fx-background-radius: 360;" text="  " />
          </children>
       </AnchorPane>
       <ImageView fitHeight="500.0" fitWidth="549.0" layoutX="14.0" layoutY="97.0" pickOnBounds="true">

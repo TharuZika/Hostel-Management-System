@@ -40,6 +40,7 @@ public class LoggingFormController implements Initializable {
     public FontAwesomeIconView warningIcon;
 
     private final LoginBO login = (LoginBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.LOGIN);
+    public JFXTextField txtPasswordShow;
 
     public void goToLoginPage(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
         String UserName=txtUserName.getText();
@@ -49,6 +50,7 @@ public class LoggingFormController implements Initializable {
             URL resource = getClass().getResource("../view/DashboardForm.fxml");
             Parent load = FXMLLoader.load(resource);
             Stage window = (Stage) context.getScene().getWindow();
+            window.setTitle("Hostel Management System");
             window.setScene(new Scene(load));
         }
         else{
@@ -78,6 +80,22 @@ public class LoggingFormController implements Initializable {
             session.save(login);
             transaction.commit();
         }
-        session.close();
+        txtPassword.setText(txtPasswordShow.getText());
+        txtPasswordShow.setText(txtPassword.getText());
+
+    }
+
+    public void passwordShowOnAction(MouseEvent event) {
+        if (txtPassword.isVisible()){
+            txtPasswordShow.setText(txtPassword.getText());
+            txtPasswordShow.setVisible(true);
+        }
+    }
+
+    public void passwordHideOnAction(MouseEvent event) {
+        if (txtPasswordShow.isVisible()) {
+            txtPassword.setText(txtPasswordShow.getText());
+            txtPasswordShow.setVisible(false);
+        }
     }
 }

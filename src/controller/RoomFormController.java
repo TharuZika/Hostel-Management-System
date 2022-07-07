@@ -100,30 +100,6 @@ public class RoomFormController {
         cmbRoomType.setValue(null);
     }
 
-    public void navigateToHome(MouseEvent mouseEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/DashboardForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
-
-    public void navigateToLogin(MouseEvent mouseEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/LoggingForm.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
-
-    public void closeWindowOnAction(ActionEvent actionEvent) {
-        javafx.application.Platform.exit();
-    }
-
     public void btnDelete_OnAction(ActionEvent actionEvent) {
         String id = tblRoom.getSelectionModel().getSelectedItem().getRoom_id();
         try {
@@ -164,10 +140,10 @@ public class RoomFormController {
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated.!").show();
                 clearFields();
             } else {
-                new Alert(Alert.AlertType.ERROR, "Something Happened").show();
+                new Alert(Alert.AlertType.ERROR, "Check Again!").show();
             }
         } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR, "Something Happened").show();
+            new Alert(Alert.AlertType.ERROR, "Check Again!").show();
         }
         btnSave.setDisable(false);
         txtRoomId.setDisable(false);
@@ -188,7 +164,7 @@ public class RoomFormController {
             }
         } catch (Exception e) {
             System.out.println(e);
-            new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+            new Alert(Alert.AlertType.ERROR, "Check details and try again!").showAndWait();
         }
         loadAllStudents();
     }
@@ -218,7 +194,6 @@ public class RoomFormController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                //new Alert(Alert.AlertType.INFORMATION, "Added").showAndWait();
             }
         }
     }

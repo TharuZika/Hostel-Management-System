@@ -28,6 +28,7 @@ public class DashboardFormController {
     public FontAwesomeIconView btnRoom;
     public FontAwesomeIconView btnKeyMoney;
     public FontAwesomeIconView btnReserve;
+    public AnchorPane mainRoot;
 
     public void initialize() throws IOException {
         this.root.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/ReserveForm.fxml")));
@@ -68,31 +69,38 @@ public class DashboardFormController {
         if (event.getSource() instanceof FontAwesomeIconView) {
             FontAwesomeIconView btn = (FontAwesomeIconView) event.getSource();
 
-            Parent root = null;
+            Parent context = null;
 
             switch (btn.getId()) {
                 case "btnStudent":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/StudentForm.fxml"));
+                    context = FXMLLoader.load(this.getClass().getResource("/view/StudentForm.fxml"));
                     break;
                 case "btnRoom":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/RoomForm.fxml"));
+                    context = FXMLLoader.load(this.getClass().getResource("/view/RoomForm.fxml"));
                     break;
                 case "btnKeyMoney":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/KeyMoneyForm.fxml"));
+                    context = FXMLLoader.load(this.getClass().getResource("/view/KeyMoneyForm.fxml"));
                     break;
                 case "btnSettings":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/ChangeLoginForm.fxml"));
+                    context = FXMLLoader.load(this.getClass().getResource("/view/ChangeLoginForm.fxml"));
                     break;
                 case "btnReserve":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/ReserveForm.fxml"));
+                    context = FXMLLoader.load(this.getClass().getResource("/view/ReserveForm.fxml"));
                     break;
             }
 
-            if (root != null) {
+            if (context != null) {
                 this.root.getChildren().clear();
-                this.root.getChildren().add(root);
+                this.root.getChildren().add(context);
 
             }
         }
+    }
+
+    public void logoutOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/LoggingForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        Stage window = (Stage) mainRoot.getScene().getWindow();
+        window.setScene(new Scene(load));
     }
 }
